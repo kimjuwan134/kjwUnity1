@@ -4,29 +4,26 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] GameObject unit;
-    [SerializeField] Transform createPosition;
+    [SerializeField] List<Unit> listUnits;
+    [SerializeField] Factory factory;
 
-    [Tooltip("몬스터를 생성하는 변수")]
-    [SerializeField] int createCount = 5;
+    float timer = 0;
 
     private void Start()
     {
-        // 게임 오브젝트를 생성하는 함수.
-        for (int i = 0; i < createCount; i++)
-        {
-            // 1. 게임 오브젝트 생성.
-            GameObject monster = Instantiate(unit, createPosition);
-
-            // 2. 생성된 게임 오브젝트의 위치 설정.
-            monster.transform.position = new Vector3(i * 5, 0, createPosition.position.z);
-
-            Debug.Log("World Position : " + monster.transform.position);
-            Debug.Log("Local Position : " + monster.transform.localPosition);
-        }
-
+        StartCoroutine(CreateRoutine());
     }
 
+    public IEnumerator CreateRoutine()
+    {
+        while (true)
+        {
+            factory.CreateUnit(listUnits[Random.Range(0, listUnits.Count)]);
+
+            // new WaitrForSeconds(5f) : 특정한 시간동안 코루틴을 대기.
+            yield return new WaitForSeconds(5f);
+        }
+    }
 
 
 }

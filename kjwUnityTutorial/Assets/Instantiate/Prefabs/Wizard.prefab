@@ -17023,8 +17023,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011578242470}
   - component: {fileID: 95000012058624550}
+  - component: {fileID: -2767087033017091574}
   m_Layer: 0
-  m_Name: wizard_weapon_macanim DEMO
+  m_Name: Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17072,6 +17073,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2767087033017091574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013586557078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a4586c3b27d08408dd945cf2f150d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000013699516860
 GameObject:
   m_ObjectHideFlags: 0

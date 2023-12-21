@@ -20600,7 +20600,7 @@ Animator:
   m_GameObject: {fileID: 1000012226140144}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: be5995a9158bda9459c22d48acd79a3f, type: 3}
-  m_Controller: {fileID: 9100000, guid: bd381ffbd2cda7a4da39842af2be8821, type: 2}
+  m_Controller: {fileID: 22100000, guid: 0e94e922aefba8045960eb77055f7ff0, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -20624,6 +20624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  targetDirection: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   speed: 5
 --- !u!136 &-2101309895856728565

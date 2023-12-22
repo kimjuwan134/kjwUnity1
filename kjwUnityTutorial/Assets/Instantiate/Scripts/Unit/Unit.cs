@@ -17,6 +17,22 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] float speed = 5.0f;
     [SerializeField] State state;
     [SerializeField] Animator animator;
+    [SerializeField] protected float health;
+
+    public void OnHit(float damage)
+    {
+        health -= damage;
+        
+        if(health <= 0)
+        {
+            state = State.Die;
+        }
+    }
+
+    public virtual void Release()
+    {
+        Destroy(gameObject);
+    }
 
     private void Awake()
     {
@@ -65,8 +81,8 @@ public abstract class Unit : MonoBehaviour
     }
 
     public virtual void Die()
-    { 
-        
+    {
+        animator.Play("Die");
     }
 
     // Trigger 충돌이 되었을 때 이벤트를 호출하는 함수

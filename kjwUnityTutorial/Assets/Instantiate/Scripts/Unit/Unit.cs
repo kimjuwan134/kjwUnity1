@@ -6,7 +6,8 @@ public enum State
 {
     Move,
     Attack,
-    Die
+    Die,
+    None
 }
 
 public abstract class Unit : MonoBehaviour
@@ -18,6 +19,7 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] State state;
     [SerializeField] Animator animator;
     [SerializeField] protected float health;
+    [SerializeField] Sound sound = new Sound();
 
     public void OnHit(float damage)
     {
@@ -80,9 +82,16 @@ public abstract class Unit : MonoBehaviour
         animator.SetBool("Attack", true);
     }
 
+    public void AttackSound()
+    {
+        AudioManagers.instance.Sound(sound.audioclips[0]);
+    }
+
     public virtual void Die()
     {
         animator.Play("Die");
+        AudioManagers.instance.Sound(sound.audioclips[1]);
+        state = State.None;
     }
 
     // Trigger 충돌이 되었을 때 이벤트를 호출하는 함수

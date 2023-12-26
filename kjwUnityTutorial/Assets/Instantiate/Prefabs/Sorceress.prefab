@@ -20630,6 +20630,10 @@ MonoBehaviour:
   state: 0
   animator: {fileID: 0}
   health: 0
+  sound:
+    audioclips:
+    - {fileID: 8300000, guid: beb88ea86c4222642b6bd7af424f3d0d, type: 3}
+    - {fileID: 8300000, guid: a120833415fff0b40ba7de9d66f5138e, type: 3}
 --- !u!136 &-2101309895856728565
 CapsuleCollider:
   m_ObjectHideFlags: 0
